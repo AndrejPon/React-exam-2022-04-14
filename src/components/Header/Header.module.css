@@ -1,0 +1,27 @@
+.header{
+    background-color: green;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px 15px 15px;
+    
+    
+}
+.img{
+    height: 80px;
+}
+
+.navLinks{
+    display: flex;
+    column-gap: 15px;
+        
+}
+.navLinks > a{
+    text-decoration: none;
+    background-color: rgb(121, 220, 205);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 5px -5px 5px 3px rgb(194, 239, 239);
+    color: rgb(113, 92, 92);
+}
