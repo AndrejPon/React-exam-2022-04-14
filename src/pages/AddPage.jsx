@@ -1,7 +1,12 @@
+import AddForm from '../components/AddForm/AddForm';
 import Container from '../components/UI/Container';
 
 function AddPage() {
-  return <Container>AddPage</Container>;
+  return (
+    <Container>
+      <AddForm>Please add your skills</AddForm>
+    </Container>
+  );
 }
 
 export default AddPage;

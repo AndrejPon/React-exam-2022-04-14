@@ -1,5 +1,7 @@
+import Container from '../components/UI/Container';
+
 function HomePage() {
-  return <div>HomePage</div>;
+  return <Container>HomePage</Container>;
 }
 
 export default HomePage;
