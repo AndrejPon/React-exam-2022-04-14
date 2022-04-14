@@ -1,5 +1,5 @@
-import Container from '../components/UI/Container';
-import Form from '../components/UI/Form';
+import Container from '../components/UI/Container/Container';
+import Form from '../components/UI/Form/Form';
 
 function LoginPage() {
   return (

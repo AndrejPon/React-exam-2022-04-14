@@ -1,5 +1,5 @@
 import AddForm from '../components/AddForm/AddForm';
-import Container from '../components/UI/Container';
+import Container from '../components/UI/Container/Container';
 
 function AddPage() {
   return (

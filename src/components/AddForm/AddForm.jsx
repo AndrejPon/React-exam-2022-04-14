@@ -1,5 +1,5 @@
+import Button from '../UI/Button/Button';
 import css from './AddForm.module.css';
-import Button from '../UI/Button';
 
 function AddForm(props) {
   return (

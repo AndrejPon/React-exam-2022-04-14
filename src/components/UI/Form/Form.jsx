@@ -1,11 +1,11 @@
-import Button from './Button';
+import Button from '../Button/Button';
 import css from './Form.module.css';
 function Form(props) {
   return (
     <>
       <h2 className={css.formTitle}>{props.children}</h2>
       <fieldset className={css.form}>
-        <form>
+        <form onSubmit={props.onSubmit}>
           <input
             className={css.input}
             type='email'

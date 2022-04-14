@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import Container from '../components/UI/Container';
+import CardsList from '../components/CardsList/CardsList';
+import Container from '../components/UI/Container/Container';
 import { getFetch } from '../helpers/helper';
 
 function HomePage() {
@@ -14,7 +15,11 @@ function HomePage() {
     setSkillsArr(skillsFromDb);
   }
 
-  return <Container>HomePage</Container>;
+  return (
+    <Container>
+      <CardsList items={skillsArr} />
+    </Container>
+  );
 }
 
 export default HomePage;

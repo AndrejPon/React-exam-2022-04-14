@@ -8,6 +8,10 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 
 function App() {
+  async function submitHandler(e) {
+    e.preventDefault();
+    console.log('submitHandler ===', submitHandler);
+  }
   return (
     <div className='App'>
       <Header />
@@ -16,7 +20,7 @@ function App() {
           <HomePage />
         </Route>
         <Route path={'/register'}>
-          <RegisterPage />
+          <RegisterPage onSubmit={submitHandler} />
         </Route>
         <Route path={'/login'}>
           <LoginPage />

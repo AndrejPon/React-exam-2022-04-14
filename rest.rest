@@ -1,0 +1,18 @@
+POST https://autumn-delicate-wilderness.glitch.me/v1/auth/register
+Content-Type: application/json
+
+{
+    "email": "josh@gmail.com",
+    "password": "secret123"
+}
+
+###
+
+POST https://autumn-delicate-wilderness.glitch.me/v1/auth/login
+Content-Type: application/json
+
+{
+    "email": "josh@gmail.com",
+    "password": "secret123"
+
+}
