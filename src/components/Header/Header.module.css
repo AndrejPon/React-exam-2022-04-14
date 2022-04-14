@@ -1,5 +1,5 @@
 .header{
-    background-color: green;
+    background-color: rgb(33, 189, 33);
     color: white;
     display: flex;
     justify-content: space-between;
@@ -18,10 +18,12 @@
         
 }
 .navLinks > a{
+    text-align: center;
+    width: 65px;
     text-decoration: none;
-    background-color: rgb(121, 220, 205);
+    background-color: rgb(52, 213, 189);
     padding: 10px;
     border-radius: 10px;
-    box-shadow: 5px -5px 5px 3px rgb(194, 239, 239);
+    box-shadow: 5px -3px 3px 1px rgb(194, 239, 239);
     color: rgb(113, 92, 92);
 }

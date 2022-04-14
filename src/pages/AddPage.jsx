@@ -1,5 +1,7 @@
+import Container from '../components/UI/Container';
+
 function AddPage() {
-  return <div>AddPage</div>;
+  return <Container>AddPage</Container>;
 }
 
 export default AddPage;
