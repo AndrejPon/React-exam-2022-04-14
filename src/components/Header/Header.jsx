@@ -5,6 +5,12 @@ import css from './Header.module.css';
 
 function Header() {
   const authCtx = useContext(AuthContext);
+
+  function logoutHandler(e) {
+    localStorage.removeItem('token');
+    authCtx.logout();
+  }
+
   return (
     <header className={css.header}>
       <img
@@ -17,6 +23,11 @@ function Header() {
         {!authCtx.isLoggedIn && <NavLink to='/register'>Register</NavLink>}
         {!authCtx.isLoggedIn && <NavLink to='/login'>Login</NavLink>}
         {authCtx.isLoggedIn && <NavLink to='/add'>Add</NavLink>}
+        {authCtx.isLoggedIn && (
+          <NavLink onClick={logoutHandler} to='/Login'>
+            Logout
+          </NavLink>
+        )}
       </nav>
     </header>
   );
