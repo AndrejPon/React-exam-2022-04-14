@@ -17,3 +17,6 @@ input{
     margin-top: 15px;
     border-radius: 15px;
 }
+.error-message{
+    color: red;
+}
