@@ -4,7 +4,7 @@ function FormContainer(props) {
   return (
     <>
       <fieldset className={`${css.formContainer} ${props.className}`}>
-        <form>{props.children}</form>
+        {props.children}
       </fieldset>
     </>
   );
