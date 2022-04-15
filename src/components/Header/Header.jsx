@@ -1,7 +1,10 @@
-import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { NavLink } from 'react-router-dom';
+import AuthContext from '../../store/authContext';
 import css from './Header.module.css';
 
 function Header() {
+  const authCtx = useContext(AuthContext);
   return (
     <header className={css.header}>
       <img
@@ -10,10 +13,10 @@ function Header() {
         alt='Google logo'
       />
       <nav className={css.navLinks}>
-        <Link to='/home'>Home</Link>
-        <Link to='/register'>Register</Link>
-        <Link to='/login'>Login</Link>
-        <Link to='/add'>Add</Link>
+        {authCtx.isLoggedIn && <NavLink to='/home'>Home</NavLink>}
+        {!authCtx.isLoggedIn && <NavLink to='/register'>Register</NavLink>}
+        {!authCtx.isLoggedIn && <NavLink to='/login'>Login</NavLink>}
+        {authCtx.isLoggedIn && <NavLink to='/add'>Add</NavLink>}
       </nav>
     </header>
   );

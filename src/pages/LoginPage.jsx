@@ -1,9 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import Button from '../components/UI/Button/Button';
 import Container from '../components/UI/Container/Container';
 import FormContainer from '../components/UI/Container/FormContainer';
 import { sendFetch } from '../helpers/helper';
+import AuthContext from '../store/authContext';
 
 const initErrors = {
   email: '',
@@ -11,6 +12,7 @@ const initErrors = {
 };
 
 function LoginPage() {
+  const authCtx = useContext(AuthContext);
   const history = useHistory();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -25,9 +27,10 @@ function LoginPage() {
   }, [email, password, errorObj]);
 
   async function submitHandler(e) {
+    e.preventDefault();
     setIsError(false);
     setErrorObj(initErrors);
-    e.preventDefault();
+    authCtx.login();
 
     if (email.trim() === '') {
       setErrorObj((prevState) => ({
@@ -78,7 +81,7 @@ function LoginPage() {
           {errorObj.password && (
             <p className='error-message'>{errorObj.password}</p>
           )}
-          <Button>Submit</Button>
+          <Button>Login</Button>
         </form>
       </FormContainer>
     </Container>
