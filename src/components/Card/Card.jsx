@@ -1,8 +1,9 @@
-function Card() {
+import css from './Card.module.css';
+function Card(props) {
   return (
-    <div>
-      <h3>Title</h3>
-      <p>Description</p>
+    <div className={css.card}>
+      <h3>{props.title}</h3>
+      <p>{props.description}</p>
     </div>
   );
 }

@@ -17,6 +17,7 @@ function HomePage() {
 
   return (
     <Container>
+      <h2 className='page-title'>Your skills</h2>
       <CardsList items={skillsArr} />
     </Container>
   );
