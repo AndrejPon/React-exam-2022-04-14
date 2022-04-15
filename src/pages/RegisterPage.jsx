@@ -48,6 +48,7 @@ function RegisterPage(props) {
     };
     console.log('newRegObj ===', newRegObj);
     const sendResult = await sendFetch('auth/register', newRegObj);
+    localStorage.getItem('token');
     console.log('sendResult ===', sendResult);
     if (sendResult.changes === 1) {
       history.push('/login');

@@ -19,9 +19,42 @@ export async function sendFetch(resource, dataToPost) {
       body: JSON.stringify(dataToPost),
     });
     const dataInJS = await resp.json();
+    // console.log('dataInJS', dataInJS);
+    if (dataInJS.msg === 'Successfully logged in') {
+      // console.log('dataInJS ===', dataInJS);
+      localStorage.setItem('token', dataInJS.token);
+    }
     return dataInJS;
   } catch (error) {
     console.log('sendFetch error', error);
     return false;
   }
 }
+export async function sendFetchWithToken(resource, dataToPost) {
+  try {
+    const token = localStorage.getItem('token');
+    const resp = await fetch(`${BASE_URL}/${resource}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+
+      body: JSON.stringify(dataToPost),
+    });
+    const dataInJS = await resp.json();
+    // console.log('dataInJS', dataInJS);
+    if (dataInJS.msg === 'Successfully logged in') {
+      // console.log('dataInJS ===', dataInJS);
+      localStorage.setItem('token', dataInJS.token);
+    }
+    return dataInJS;
+  } catch (error) {
+    console.log('sendFetch error', error);
+    return false;
+  }
+}
+
+// export function saveTokenToLocalStorage(tokenDetails) {
+//   localStorage.setItem('userDetails', tokenDetails);
+// }
