@@ -5,6 +5,7 @@ import Container from '../components/UI/Container/Container';
 import FormContainer from '../components/UI/Container/FormContainer';
 import { sendFetch } from '../helpers/helper';
 import AuthContext from '../store/authContext';
+import toast, { Toaster } from 'react-hot-toast';
 
 const initErrors = {
   email: '',
@@ -56,11 +57,13 @@ function LoginPage() {
       history.push('/home');
     }
     if (sendResult.err) {
+      toast.error('Failed to login. Please check your data.');
       setIsError(true);
     }
   }
   return (
     <Container>
+      <Toaster toastOptions={{ position: 'top-center' }} />
       <FormContainer>
         <h2 className='page-title'>Please login</h2>
         <form onSubmit={submitHandler}>
