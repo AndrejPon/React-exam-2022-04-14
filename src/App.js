@@ -32,6 +32,9 @@ function App() {
       <div className='App'>
         <Header />
         <Switch>
+          <ProtectedRoute path={'/'} exact>
+            <HomePage />
+          </ProtectedRoute>
           <Route path={'/register'}>
             <RegisterPage />
           </Route>

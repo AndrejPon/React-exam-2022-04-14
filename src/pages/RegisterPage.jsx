@@ -79,7 +79,7 @@ function RegisterPage(props) {
           {errorObj.password && (
             <p className='error-message'>{errorObj.password}</p>
           )}
-          <Button>Submit</Button>
+          <Button>Register</Button>
         </form>
       </FormContainer>
     </Container>
