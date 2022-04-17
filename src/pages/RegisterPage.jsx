@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import toast, { Toaster } from 'react-hot-toast';
 import { useHistory } from 'react-router-dom';
 import Button from '../components/UI/Button/Button';
 import Container from '../components/UI/Container/Container';
@@ -51,14 +52,18 @@ function RegisterPage(props) {
     localStorage.getItem('token');
     console.log('sendResult ===', sendResult);
     if (sendResult.changes === 1) {
-      history.push('/login');
+      toast.success('You are successfully registered!');
+      setTimeout(() => history.push('/login'), 3000);
+      // history.push('/login');
     }
     if (sendResult.err) {
+      toast.error('Failed to register. Please check your data.');
       setIsError(true);
     }
   }
   return (
     <Container>
+      <Toaster toastOptions={{ position: 'top-center' }} />
       <FormContainer>
         <h2 className='page-title'>Please register</h2>
         <form onSubmit={submitHandler}>

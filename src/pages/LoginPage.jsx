@@ -58,6 +58,7 @@ function LoginPage() {
     }
     if (sendResult.err) {
       toast.error('Failed to login. Please check your data.');
+      setTimeout(() => history.push('/login'), 3000);
       setIsError(true);
     }
   }
