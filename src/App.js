@@ -17,8 +17,7 @@ function App() {
   function logout() {
     setIsLoggedIn(false);
   }
-  function login(email, password) {
-    console.log('email, password', email, password);
+  function login() {
     setIsLoggedIn(true);
   }
 
