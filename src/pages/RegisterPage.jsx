@@ -54,7 +54,7 @@ function RegisterPage(props) {
     if (sendResult.changes === 1) {
       toast.success('You are successfully registered!');
       setTimeout(() => history.push('/login'), 3000);
-      // history.push('/login');
+      history.push('/login');
     }
     if (sendResult.err) {
       toast.error('Failed to register. Please check your data.');

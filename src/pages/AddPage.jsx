@@ -1,5 +1,6 @@
 // import AddForm from '../components/AddForm/AddForm';
 import { useEffect, useState } from 'react';
+import toast, { Toaster } from 'react-hot-toast';
 import { useHistory } from 'react-router-dom';
 import Button from '../components/UI/Button/Button';
 import Container from '../components/UI/Container/Container';
@@ -51,14 +52,19 @@ function AddPage() {
     const sendResult = await sendFetchWithToken('content/skills', newObj);
     console.log('sendResult ===', sendResult);
     if (sendResult.msg === 'Added new skill to account') {
-      history.push('/home');
+      toast.success('New skill has been successfully added!');
+      setTimeout(() => history.push('/home'), 3000);
+      // history.push('/home');
     }
     if (sendResult.err) {
+      toast.error('Something went wrong. Please check your data.');
+      setTimeout(() => history.push('/add'), 3000);
       setIsError(true);
     }
   }
   return (
     <Container>
+      <Toaster toastOptions={{ position: 'top-center' }} />
       <FormContainer>
         <form onSubmit={submitHandler}>
           {isError && <h3 className='error-message'>Please check the form</h3>}
