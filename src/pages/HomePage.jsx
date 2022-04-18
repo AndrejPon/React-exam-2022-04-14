@@ -13,7 +13,6 @@ function HomePage() {
   async function getSkills() {
     const skillsFromDb = await getFetch('content/skills');
     setSkillsArr(skillsFromDb);
-    // console.log('skillsFromDb', skillsArr);
   }
 
   function onDeleteHandler(skillsIdToDelete) {

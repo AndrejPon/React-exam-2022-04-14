@@ -50,16 +50,16 @@ function LoginPage() {
       email: email,
       password: password,
     };
-    console.log('newLogObj ===', newLogObj);
+
     const sendResult = await sendFetch('auth/login', newLogObj);
-    console.log('sendResult ===', sendResult);
+
     if (sendResult.msg === 'Successfully logged in') {
       history.push('/home');
     }
     if (sendResult.err) {
       authCtx.logout();
       toast.error('Failed to login. Please check your data.');
-      // setTimeout(() => history.push('/login'), 3000);
+
       setIsError(true);
     }
   }

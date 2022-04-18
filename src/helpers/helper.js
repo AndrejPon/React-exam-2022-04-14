@@ -1,5 +1,4 @@
 const BASE_URL = process.env.REACT_APP_BASE_URL;
-// const BASE_URL = 'https://autumn-delicate-wilderness.glitch.me/v1';
 
 export async function getFetch(resource) {
   try {
@@ -24,9 +23,7 @@ export async function sendFetch(resource, dataToPost) {
       body: JSON.stringify(dataToPost),
     });
     const dataInJS = await resp.json();
-    // console.log('dataInJS', dataInJS);
     if (dataInJS.msg === 'Successfully logged in') {
-      // console.log('dataInJS ===', dataInJS);
       localStorage.setItem('token', dataInJS.token);
     }
     return dataInJS;
@@ -48,9 +45,7 @@ export async function sendFetchWithToken(resource, dataToPost) {
       body: JSON.stringify(dataToPost),
     });
     const dataInJS = await resp.json();
-    // console.log('dataInJS', dataInJS);
     if (dataInJS.msg === 'Successfully logged in') {
-      // console.log('dataInJS ===', dataInJS);
       localStorage.setItem('token', dataInJS.token);
     }
     return dataInJS;
@@ -59,7 +54,3 @@ export async function sendFetchWithToken(resource, dataToPost) {
     return false;
   }
 }
-
-// export function saveTokenToLocalStorage(tokenDetails) {
-//   localStorage.setItem('userDetails', tokenDetails);
-// }
