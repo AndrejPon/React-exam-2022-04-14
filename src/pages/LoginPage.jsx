@@ -57,8 +57,9 @@ function LoginPage() {
       history.push('/home');
     }
     if (sendResult.err) {
+      authCtx.logout();
       toast.error('Failed to login. Please check your data.');
-      setTimeout(() => history.push('/login'), 3000);
+      // setTimeout(() => history.push('/login'), 3000);
       setIsError(true);
     }
   }

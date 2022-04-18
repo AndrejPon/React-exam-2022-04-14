@@ -48,9 +48,9 @@ function AddPage() {
       title: title,
       description: description,
     };
-    console.log('newObj ===', newObj);
+    // console.log('newObj ===', newObj);
     const sendResult = await sendFetchWithToken('content/skills', newObj);
-    console.log('sendResult ===', sendResult);
+    // console.log('sendResult ===', sendResult);
     if (sendResult.msg === 'Added new skill to account') {
       toast.success('New skill has been successfully added!');
       setTimeout(() => history.push('/home'), 3000);
