@@ -1,0 +1,33 @@
+POST https://autumn-delicate-wilderness.glitch.me/v1/auth/register
+Content-Type: application/json
+
+{
+    "email": "josh@gmail.com",
+    "password": "123"
+}
+
+###
+
+POST https://autumn-delicate-wilderness.glitch.me/v1/auth/login
+Content-Type: application/json
+
+{
+    "email": "josh@gmail.com",
+    "password": "secret123"
+}
+
+###
+
+POST https://autumn-delicate-wilderness.glitch.me/v1/content/skills
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTI1LCJlbWFpbCI6Impvc2hAZ21haWwuY29tIiwiaWF0IjoxNjUwMDE5MTY1fQ.b6ZXeAkYRrnHffd1MMzb6C_3nzTRyCHvyKYyRjhmZns
+Content-Type: application/json
+
+{
+    "title": "React JS",
+    "description": "Can be better"
+}
+
+###
+
+GET https://autumn-delicate-wilderness.glitch.me/v1/content/skills
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTI1LCJlbWFpbCI6Impvc2hAZ21haWwuY29tIiwiaWF0IjoxNjUwMDE5MTY1fQ.b6ZXeAkYRrnHffd1MMzb6C_3nzTRyCHvyKYyRjhmZns
