@@ -13,12 +13,19 @@ function HomePage() {
   async function getSkills() {
     const skillsFromDb = await getFetch('content/skills');
     setSkillsArr(skillsFromDb);
+    // console.log('skillsFromDb', skillsArr);
+  }
+
+  function onDeleteHandler(skillsIdToDelete) {
+    setSkillsArr((prevState) => {
+      return prevState.filter((skillObj) => skillObj.id !== skillsIdToDelete);
+    });
   }
 
   return (
     <Container>
       <h2 className='page-title'>Your skills</h2>
-      <CardsList items={skillsArr} />
+      <CardsList items={skillsArr} onDelete={onDeleteHandler} />
     </Container>
   );
 }
